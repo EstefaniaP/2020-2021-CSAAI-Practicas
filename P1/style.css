@@ -1,0 +1,15 @@
+body{
+
+    border: solid;
+    border-color:#806200;
+    margin: 10px;
+  
+  }
+  p{
+    padding: 20px;
+    border: solid; /*1ºDibujamos borde*/
+    border-color: #2295cacf;
+    margin: 0px;
+    text-align: center;
+  
+  }
