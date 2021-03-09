@@ -1,3 +1,8 @@
+@font-face{
+  font-family: letranasa;
+  src: url('letranasa.ttf');
+}
+
 body{
 
     background-image: url('tenor.gif');
@@ -8,6 +13,8 @@ body{
     margin: 10px;
     text-align: center;
     color: white;
+    font-family: letranasa;
+    
     
   }
   h3{
@@ -50,6 +57,7 @@ body{
     margin-top: 0px;
     margin-bottom: 0px;
   }
+
 
   /* Estilo caja lateral izquierda*/
   aside{
