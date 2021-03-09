@@ -34,3 +34,12 @@ body{
   align-items: center;
   text-shadow:2px 2px purple;
   }
+
+  .texto{
+  font-size: 10px;
+  /*display: flex;*/
+  align-items: center;
+  margin: 10px;
+  padding: 0px;
+  text-align: justify;
+  }
