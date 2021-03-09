@@ -1,6 +1,9 @@
 body{
 
-    background-color: lightpink;
+    background-image: url('stars.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     border: solid;
     border-color:#806200;
     margin: 10px;
