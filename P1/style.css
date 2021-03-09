@@ -1,9 +1,10 @@
 body{
 
-    background-image: url('Star.jpg');
+    background-image: url('tenor.gif');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-color: black;
+    background-size: 100% 20%;
     margin: 10px;
     text-align: center;
     color: white;
