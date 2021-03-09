@@ -4,13 +4,10 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    border: solid;
-    border-color:#82dcff;
     margin: 10px;
     text-align: center;
-    color:lightyellow;
+    color: white;
     
-  
   }
   h3{
     color:lightyellow;
@@ -36,9 +33,37 @@ body{
   }
 
   .texto{
-  font-size: 10px;
+  font-size: 20px;
+  font-family: monospace;
+  color: lemonchiffon;
   align-items: center;
   margin: 10px;
   padding: 0px;
   text-align: justify;
+  }
+
+  .areaprincipal{
+    display: inline-flex;
+    padding: 0px;
+    margin: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  /* Estilo caja lateral izquierda*/
+  aside{
+    width: 20%;
+    margin: 0px;
+    padding:0px;
+    text-align: justify;
+  }
+
+  /* Estilo caja central*/
+  main{
+  border: #82dcff  10px;
+  margin-top: 0px;
+  padding: 10px;
+  background-position: center;
+  background-repeat: repeat-x;
+  flex-wrap: wrap;
   }
