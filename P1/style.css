@@ -37,17 +37,18 @@ body{
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  text-shadow:2px 2px purple;
+  text-shadow:2px 2px rgb(124, 96, 5);
   }
 
   .texto{
-  font-size: 20px;
+  font-size: 15px;
   align-items: center;
   margin: 10px;
   padding: 0px;
-  text-align: justify;
-  line-height : 30px;
+  text-align: left;
+  line-height : 25px;
   list-style-image: url("");
+  font-family: monospace;
   }
 
   .areaprincipal{
@@ -59,11 +60,12 @@ body{
   }
   
 .a{
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(247, 159, 220);
   align-items: center;
   text-align: justify;
   text-decoration: none;
+  font-style: oblique;
   
 }
 
