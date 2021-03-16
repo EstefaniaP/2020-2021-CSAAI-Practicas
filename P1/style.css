@@ -22,12 +22,7 @@ body{
    margin-top: 50px;
   }
 
-  h3{
-    padding: 20px;
-    margin: 0px;
-    text-align: center;
   
-  }
 
   .titulos{
   font-size: 20px;
@@ -75,17 +70,17 @@ body{
 
   /* Estilo caja lateral izquierda*/
   aside{
-    width: 20%;
+    width: 25%;
     margin: 0px;
     padding:0px;
-    text-align: justify;
+    margin-top: -40px;
   }
 
   /* Estilo caja central*/
   main{
-  border: #82dcff  10px;
   margin-top: 0px;
   padding: 50px;
+  width: 75%;
   background-position: center;
   background-repeat: repeat-x;
   flex-wrap: wrap;
