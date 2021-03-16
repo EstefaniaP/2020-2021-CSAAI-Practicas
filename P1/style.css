@@ -57,14 +57,18 @@ body{
   
 .a{
   font-size: 15px;
-  color: rgb(247, 187, 57);
   align-items: center;
   text-align: justify;
   text-decoration: none;
   font-style: oblique;
-  
 }
 
+a:link {
+  color: rgb(247, 187, 57);
+}
+a:visited {
+  color:rgb(253, 147, 230) ;
+}
   /* Estilo caja lateral izquierda*/
   aside{
     width: 25%;
