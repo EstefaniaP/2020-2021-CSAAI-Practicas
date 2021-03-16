@@ -14,15 +14,14 @@ body{
     text-align: center;
     color: white;
     font-family: letranasa;
-    
-    
-    
   }
 
   h1{
    font-size:300%;
-  
+   line-height: 1px;
+   margin-top: 50px;
   }
+
   h3{
     padding: 20px;
     margin: 0px;
