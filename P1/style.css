@@ -5,11 +5,11 @@
 
 body{
 
-    background-image: url('tenor.gif');
+    background-image: url('fondo1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: black;
-    background-size: 100% 20%;
+    background-size: 100% 100%;
     margin: 10px;
     text-align: center;
     color: white;
@@ -17,6 +17,11 @@ body{
     
     
     
+  }
+
+  h1{
+   font-size:300%;
+  
   }
   h3{
     padding: 20px;
@@ -27,7 +32,7 @@ body{
 
   .titulos{
   font-size: 20px;
-  border-bottom: #c70707 5px double;
+  border-bottom: #fcb212 5px double;
   padding: 10px;
   display: inline-flex;
   width: 95%;
