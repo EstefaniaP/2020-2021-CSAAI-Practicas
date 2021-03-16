@@ -5,10 +5,9 @@
 
 body{
 
-    background-image: url('fondo1.jpg');
+    background-image: url('Fondo.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: black;
     background-size: 100% 100%;
     margin: 10px;
     text-align: center;
@@ -23,7 +22,6 @@ body{
   }
 
   
-
   .titulos{
   font-size: 20px;
   border-bottom: #fcb212 5px double;
@@ -46,7 +44,6 @@ body{
   padding: 0px;
   text-align: left;
   line-height : 25px;
-  list-style-image: url("");
   font-family: monospace;
   }
 
