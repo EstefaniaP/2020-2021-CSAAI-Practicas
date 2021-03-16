@@ -1,3 +1,5 @@
+
+/*Añadida fuente nasa*/
 @font-face{
   font-family: letranasa;
   src: url('letranasa.ttf');
@@ -15,13 +17,14 @@ body{
     font-family: letranasa;
   }
 
+  /*Estilo del Nombre*/
   h1{
    font-size:300%;
    line-height: 1px;
    margin-top: 50px;
   }
 
-  
+  /*Estilo de la clase titulos*/
   .titulos{
   font-size: 20px;
   border-bottom: #fcb212 5px double;
@@ -37,6 +40,7 @@ body{
   text-shadow:2px 2px rgb(124, 96, 5);
   }
 
+  /*Estilo de la clase textos*/
   .texto{
   font-size: 15px;
   align-items: center;
@@ -46,7 +50,7 @@ body{
   line-height : 25px;
   font-family: monospace;
   }
-
+  /* Estilo area principal*/
   .areaprincipal{
     display: inline-flex;
     padding: 0px;
@@ -62,7 +66,6 @@ body{
   text-decoration: none;
   font-style: oblique;
 }
-
 a:link {
   color: rgb(247, 187, 57);
 }
