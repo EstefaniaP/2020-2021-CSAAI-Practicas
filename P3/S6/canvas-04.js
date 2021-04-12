@@ -19,6 +19,7 @@ ctx.beginPath();
     ctx.moveTo(10, 80);
     ctx.lineTo(150,80);
     ctx.lineTo(150,20);
+    ctx.lineTo(100,50);
 
     ctx.strokeStyle = 'blue';
     //-- Cambiar el tamaño de la linea del trazo
