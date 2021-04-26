@@ -11,6 +11,16 @@ raiz = document.getElementById("raiz")
 
 let digitos=document.getElementsByClassName("cdigito")
 
+const ESTADOS = {
+    INIT: 0,
+    OP1: 1,
+    OPERACION: 2,
+    OP2: 3, 
+}
+
+//----Estado inicial
+let estado = ESTADO.INIT;
+
 for(i = 0; i < digitos.length; i++){
   digitos[i].onclick = (ev) =>{
     digito(ev.target);
