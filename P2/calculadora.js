@@ -84,7 +84,7 @@ raiz.onclick = () => {
     display.innerHTML = Math.sqrt(display.innerHTML);
   }
 
-//--Clacular logaritmo neperiano
-neperiano.onclick = () =>{
+//--Calcular logaritmo neperiano
+neperiano.onclick = () => {
     display.innerHTML = Math.log(display.innerHTML);
 } 
