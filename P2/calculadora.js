@@ -52,3 +52,9 @@ clearlast.onclick = () => {
 clear.onclick = () => {
   display.innerHTML = "0";
 }
+
+//-- Calcular raiz cuadrada en la expresion
+raiz.onclick = () => {
+    display.innerHTML = Math.sqrt(display.innerHTML);
+    sonido_teclas.play();
+  }
