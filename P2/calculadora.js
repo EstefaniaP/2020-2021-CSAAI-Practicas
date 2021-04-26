@@ -82,5 +82,9 @@ clear.onclick = () => {
 //-- Calcular raiz cuadrada en la expresion
 raiz.onclick = () => {
     display.innerHTML = Math.sqrt(display.innerHTML);
-    sonido_teclas.play();
   }
+
+//--Clacular logaritmo neperiano
+neperiano.onclick = () =>{
+    display.innerHTML = Math.neperiano(display.innerHTML);
+} 
