@@ -11,31 +11,15 @@ raiz = document.getElementById("raiz")
 
 let digitos=document.getElementsByClassName("cdigito")
 
-const ESTADOS = {
+const ESTADO = {
     INIT: 0,
     OP1: 1,
-    OPERACION: 2,
+    OPERATION: 2,
     OP2: 3, 
 }
 
 //----Estado inicial
 let estado = ESTADO.INIT;
-
-for(i = 0; i < digitos.length; i++){
-  digitos[i].onclick = (ev) =>{
-    digito(ev.target);
-  }
-}
-
-let operadores=document.getElementsByClassName("operador")
-
-for(i = 0; i < operadores.length; i++){
-  operadores[i].onclick = (ev) =>{
-    if(estado == ESTADO.OP1){
-        display.innerHTML += ev.target.value;
-        estado = ESTADO.OPERACION;
-  }
-}
 
 function digito(boton)
 {
@@ -44,13 +28,32 @@ function digito(boton)
         estado = ESTADO.OP1;
       }else if (estado == ESTADO.OP1){
         display.innerHTML += boton;
-      }else if (estado == ESTADO.OPERACION) {
+      }else if (estado == ESTADO.OPERATION) {
         display.innerHTML += boton;
         estado = ESTADO.OP2;
       }else if (estado == ESTADO.OP2){
         display.innerHTML += boton;
       }
 }
+
+for(i = 0; i < digitos.length; i++){
+    digitos[i].onclick = (ev) =>{
+      digito(ev.target.value);
+    }
+  }
+
+
+let operadores=document.getElementsByClassName("operador")
+
+for(i = 0; i < operadores.length; i++){
+  operadores[i].onclick = (ev) =>{
+    if(estado == ESTADO.OP1){
+        display.innerHTML += ev.target.value;
+        estado = ESTADO.OPERATION;
+  }
+}
+}
+
 
 //-- Evaluar la expresion
 igual.onclick = () => {
