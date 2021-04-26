@@ -5,7 +5,7 @@
   }
 
 body {
-    background-color: #D6DCDE;
+    background-image: url("eclipse.jpg");
     font-family: letranasa;
   }
   
@@ -18,7 +18,6 @@ body {
     height: 60px;
     border-radius: 5px;
     padding-right: 10px;
-
    
   }
   
@@ -29,6 +28,7 @@ body {
     font-size: 20px;
     text-align: center;
     font-family: letranasa;
+    
   }
   div {
     margin-left: auto;
