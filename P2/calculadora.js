@@ -87,10 +87,11 @@ raiz.onclick = () => {
 //--Calcular logaritmo neperiano
 neperiano.onclick = () => {
     display.innerHTML = Math.log(display.innerHTML);
-    display.innerHTML = Math.round(display.innerHTML);
+    display.innerHTML = Math.round(display.innerHTML * 1000)/1000; //--Redondeo a 3 decimales
 } 
 
 //-- Calcular logaritmo en base 10 en la expresion
 logaritmo.onclick = () => {
   display.innerHTML = Math.log10(display.innerHTML);
+  display.innerHTML = Math.round(display.innerHTML * 1000)/1000; //--Redondeo a 3 decimales
 }
