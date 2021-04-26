@@ -6,7 +6,8 @@ igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 clearlast = document.getElementById("clearlast")
 dot = document.getElementById("dot")
-exp = document.getElementById("exp"),
+exp = document.getElementById("exp")
+raiz = document.getElementById("raiz")
 
 let digitos=document.getElementsByClassName("cdigito")
 
