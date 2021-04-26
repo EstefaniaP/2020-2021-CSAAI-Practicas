@@ -86,5 +86,5 @@ raiz.onclick = () => {
 
 //--Clacular logaritmo neperiano
 neperiano.onclick = () =>{
-    display.innerHTML = Math.neperiano(display.innerHTML);
+    display.innerHTML = Math.log(display.innerHTML);
 } 
