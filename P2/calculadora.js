@@ -31,22 +31,33 @@ let operadores=document.getElementsByClassName("operador")
 
 for(i = 0; i < operadores.length; i++){
   operadores[i].onclick = (ev) =>{
-    display.innerHTML += ev.target.value;
+    if(estado == ESTADO.OP1){
+        display.innerHTML += ev.target.value;
+        estado = ESTADO.OPERACION;
   }
 }
 
 function digito(boton)
 {
-  if(display.innerHTML == "0"){
-    display.innerHTML = boton.value;
-  }else{
-  display.innerHTML += boton.value;
-  }
+    if (estado == ESTADO.INIT) {
+        display.innerHTML = boton;
+        estado = ESTADO.OP1;
+      }else if (estado == ESTADO.OP1){
+        display.innerHTML += boton;
+      }else if (estado == ESTADO.OPERACION) {
+        display.innerHTML += boton;
+        estado = ESTADO.OP2;
+      }else if (estado == ESTADO.OP2){
+        display.innerHTML += boton;
+      }
 }
 
 //-- Evaluar la expresion
 igual.onclick = () => {
-  display.innerHTML = eval(display.innerHTML);
+    if(estado == ESTADO.OP1 ||  estado == ESTADO.OP2){
+        display.innerHTML = eval(display.innerHTML);
+        estado = ESTADO.OP1;
+      }
 }
 
 //-- Borrar último dígito
@@ -61,6 +72,8 @@ clearlast.onclick = () => {
 //-- Poner a cero la expresion
 clear.onclick = () => {
   display.innerHTML = "0";
+  console.log("clear");
+  estado = ESTADO.INIT;
 }
 
 //-- Calcular raiz cuadrada en la expresion
