@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NASA Calculator</title>
     <script src="calculadora.js" defer></script>
-    <title>Calculadora</title>
-</head>
-<body>
-    <div class="calculadora">
-        <p id="display">0</p>
-        <button class="boton_value" value="7">7</button>
-        <button class="boton_value" value="8">8</button>
-        <button class="boton_value" value="9">9</button>
-        <button class = "boton_value" value="**">^</button>
-        <button id ="sqrt">√</button>
-        </br>
-        <button class="boton_value" value="4">4</button>
-        <button class="boton_value" value="5">5</button>
-        <button class="boton_value" value="6">6</button>
-        <button class="op" value="*">x</button>
-        <button class="op" value="/">÷</button>
-        </br>
-        <button class="boton_value" value="1">1</button>
-        <button class="boton_value" value="2">2</button>
-        <button class="boton_value" value="3">3</button>
-        <button class="op" value="+">+</button>
-        <button class="op" value="-">-</button>
-        </br>
-        <button class="boton_value" value="0">0</button>
-        <button class="boton_value" value=".">.</button>
-        <button id="ac">AC</button>
-        <button id="borrar">DEL</button>
-        <button id="equal">=</button>
-    </div>    
-</body>
+    <link rel="stylesheet" href="calculadora.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+    <p id="display">0</p>
+    <button class="cdigito" value="7">7</button>
+    <button class="cdigito" value="8">8</button>
+    <button class="cdigito" value="9">9</button>
+    <button class="operador" value="/">÷</button>
+    <button id="clearlast">DEL</button>
+    <br>
+    <button class="cdigito" value="4">4</button>
+    <button class="cdigito" value="5">5</button>
+    <button class="cdigito" value="6">6</button>
+    <button class="operador" value="*">x</button>
+    <button id="clear">AC</button>
+    <br>
+    <button class="cdigito" value="1">1</button>
+    <button class="cdigito" value="2">2</button>
+    <button class="cdigito" value="3">3</button>
+    <button class="operador" value="-">-</button>
+    <br>
+    <button class="cdigito" value="0">0</button>
+    <button class="cdigito" value=".">.</button>
+    <button class="operador" value="+">+</button>
+    <button id="igual">=</button>
+    <br>
+    </div>
+  </body>
 </html>
