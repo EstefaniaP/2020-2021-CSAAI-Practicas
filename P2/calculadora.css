@@ -42,7 +42,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    margin-top: 150px;
+    margin: center;
     background-image: linear-gradient(to bottom right, rgb(92, 67, 0), rgb(255, 251, 226));
     width: 330px;
     height: 450px;
