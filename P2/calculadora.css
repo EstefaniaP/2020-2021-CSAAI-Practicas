@@ -23,9 +23,10 @@ body {
   }
   
   button {
-    width: 70px;
-    height: 60px;
-    border-bottom: 2%;
+    width: 60px;
+    height: 50px;
+    border-bottom: burlywood;
+    border-color:blanchedalmond;
     border-radius: 15px 0px 15px 0px;
     margin-bottom: 15px;
     font-size: 20px;
@@ -38,10 +39,17 @@ body {
     margin-right: auto;
     padding: 20px;
     margin-top: 150px;
-    /*background-color: #fff5bd;*/
     background-image: linear-gradient(to bottom right, rgb(92, 67, 0), rgb(255, 251, 226));
     width: 372px;
     height: 450px;
     border-radius: 20px;
 
   }
+
+  #igual {
+    width: 120px;
+    height: 50px;
+    border-color:blanchedalmond;
+    font-size: 20px;
+    text-align: center;
+    font-family: letranasa;
