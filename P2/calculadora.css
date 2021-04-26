@@ -9,6 +9,10 @@ body {
     font-family: letranasa;
     
   }
+  h1{
+    color: burlywood;
+    text-align: center;
+  }
   
   p {
     background-color: #000000;
