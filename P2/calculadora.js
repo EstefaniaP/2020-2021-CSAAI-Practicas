@@ -88,3 +88,8 @@ raiz.onclick = () => {
 neperiano.onclick = () => {
     display.innerHTML = Math.log(display.innerHTML);
 } 
+
+//-- Calcular logaritmo en base 10 en la expresion
+logaritmo.onclick = () => {
+  display.innerHTML = Math.log10(display.innerHTML);
+}
