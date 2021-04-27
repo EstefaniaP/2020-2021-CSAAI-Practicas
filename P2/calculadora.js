@@ -82,6 +82,7 @@ clear.onclick = () => {
 //-- Calcular raiz cuadrada en la expresion
 raiz.onclick = () => {
     display.innerHTML = Math.sqrt(display.innerHTML);
+    display.innerHTML = Math.round(display.innerHTML * 1000)/1000; //--Redondeo a 3 decimales
   }
 
 //--Calcular logaritmo neperiano
