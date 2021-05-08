@@ -16,8 +16,8 @@ let x_pala = 100;
 let y_pala = 620;
 
 //--Dibujar ladrillos
-let X_inicio = 18;
-let Y_inicio = 18;
+let X_inicio = 10;
+let Y_inicio = 10;
 
 const LADRILLO = {
     FILA: 5,
@@ -44,6 +44,8 @@ for(let i = 0; i < LADRILLO.FILA; i++){
     }
 }
 
+//-- Movimiento pala
+var move = window.event;
 
 //-- Velocidad horizontal del objeto
 let velx = 3;
@@ -121,6 +123,20 @@ function update()
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
+
+  //--Movimiento de la pala
+  window.onkeydown = (e) => {
+      console.log();
+
+      switch (e.key){
+        case "d":
+            x_pala = x_pala + 10;
+            break;
+        case "a":
+            x_pala = x_pala - 10;
+            break;
+      }
+  }
 }
 
 //-- ¡Que empiece la función!
