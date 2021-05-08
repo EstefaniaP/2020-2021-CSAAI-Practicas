@@ -3,8 +3,8 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 400;
-canvas.height = 800;
+canvas.width = 500;
+canvas.height = 700;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -15,23 +15,23 @@ let y_bola = 600;
 let x_pala = 100;
 let y_pala = 620;
 
-//--Dibujamos los ladrillos
+//--Dibujar ladrillos
 let X_inicio = 18;
 let Y_inicio = 18;
 
 const LADRILLO = {
     FILA: 5,
     COLUMNA: 9,
-    W: 50, //ancho
-    H: 30, // alto
-    PADDING: 20, // espacio alrededor del ladrillo
-    VISIBLE: true // estado del ladrillo
+    W: 40, 
+    H: 20, 
+    PADDING: 15, 
+    VISIBLE: true 
 }
 const ladrillos = [];
 
 // ladrillos
 for(let i = 0; i < LADRILLO.FILA; i++){
-    ladrillos[i] = []; // inicializamos filas
+    ladrillos[i] = []; // inicializa filas
     for(let j = 0; j < LADRILLO.COLUMNA; j++){
         ladrillos[i][j] = {
             x: X_inicio + (LADRILLO.W + LADRILLO.PADDING) * j,
