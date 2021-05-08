@@ -3,15 +3,15 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 300;
-canvas.height = 100;
+canvas.width = 400;
+canvas.height = 800;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
 //-- Posición del elemento a animar
-let x = 0;
-let y = 0;
+let x_bola = 0;
+let y_bola = 600;
 
 //-- Velocidad horizontal del objeto
 let velx = 3;
@@ -26,19 +26,19 @@ function update()
   //-- Comprobar colisión con borde derecho
   
    //-- Condicion de rebote en extremos del canvas
-   if (x < 0 || x >= (canvas.width - 20) ) {
+   if (x_bola < 0 || x_bola >= (canvas.width - 20) ) {
     velx = -velx;
   }
   
   // Actualizar la posición
-  x = x + velx;
+  x_bola = x_bola + velx;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
-    ctx.rect(x, y, 20, 20);
+    ctx.arc(x_bola, y_bola, 5, 0, 2 * Math.PI);
 
     //-- Dibujar
     ctx.fillStyle = 'red';
