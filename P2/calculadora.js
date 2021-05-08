@@ -54,7 +54,6 @@ for(i = 0; i < operadores.length; i++){
 }
 }
 
-
 //-- Evaluar la expresion
 igual.onclick = () => {
     if(estado == ESTADO.OP1 ||  estado == ESTADO.OP2){
