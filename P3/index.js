@@ -63,6 +63,23 @@ function bola(){
     ctx.stroke()
   ctx.closePath();
 }
+
+//--Funcion pala
+function pala(){
+    ctx.beginPath();
+    ctx.rect(x_pala, y_pala, 80, 20);
+
+    //-- Dibujar
+    ctx.fillStyle = 'red';
+
+    //-- Rellenar
+    ctx.fill();
+
+    //-- Dibujar el trazo
+    ctx.stroke()
+  ctx.closePath();
+}
+
 //-- Funcion principal de animacion
 function update() 
 {
@@ -100,18 +117,7 @@ function update()
   bola();
   
   //--PALA
-  ctx.beginPath();
-    ctx.rect(x_pala, y_pala, 80, 20);
-
-    //-- Dibujar
-    ctx.fillStyle = 'red';
-
-    //-- Rellenar
-    ctx.fill();
-
-    //-- Dibujar el trazo
-    ctx.stroke()
-  ctx.closePath();
+  pala();
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
