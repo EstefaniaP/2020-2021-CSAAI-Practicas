@@ -48,6 +48,21 @@ for(let i = 0; i < LADRILLO.FILA; i++){
 //-- Velocidad horizontal del objeto
 let velx = 3;
 
+//--Funcion bola
+function bola(){
+    ctx.beginPath();
+    ctx.arc(x_bola, y_bola, 5, 0, 2 * Math.PI);
+
+    //-- Dibujar
+    ctx.fillStyle = 'red';
+
+    //-- Rellenar
+    ctx.fill();
+
+    //-- Dibujar el trazo
+    ctx.stroke()
+  ctx.closePath();
+}
 //-- Funcion principal de animacion
 function update() 
 {
@@ -82,18 +97,7 @@ function update()
     }
   //-- 3) Dibujar los elementos visibles
   //---BOLA
-  ctx.beginPath();
-    ctx.arc(x_bola, y_bola, 5, 0, 2 * Math.PI);
-
-    //-- Dibujar
-    ctx.fillStyle = 'red';
-
-    //-- Rellenar
-    ctx.fill();
-
-    //-- Dibujar el trazo
-    ctx.stroke()
-  ctx.closePath();
+  bola();
   
   //--PALA
   ctx.beginPath();
