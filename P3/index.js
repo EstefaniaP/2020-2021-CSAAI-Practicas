@@ -12,6 +12,37 @@ const ctx = canvas.getContext("2d");
 //-- Posición del elemento a animar
 let x_bola = 0;
 let y_bola = 600;
+let x_pala = 100;
+let y_pala = 620;
+
+//--Dibujamos los ladrillos
+let X_inicio = 18;
+let Y_inicio = 18;
+
+const LADRILLO = {
+    FILA: 5,
+    COLUMNA: 9,
+    W: 50, //ancho
+    H: 30, // alto
+    PADDING: 20, // espacio alrededor del ladrillo
+    VISIBLE: true // estado del ladrillo
+}
+const ladrillos = [];
+
+// ladrillos
+for(let i = 0; i < LADRILLO.FILA; i++){
+    ladrillos[i] = []; // inicializamos filas
+    for(let j = 0; j < LADRILLO.COLUMNA; j++){
+        ladrillos[i][j] = {
+            x: X_inicio + (LADRILLO.W + LADRILLO.PADDING) * j,
+            y: Y_inicio + (LADRILLO.H + LADRILLO.PADDING) * i,
+            W: LADRILLO.W,
+            H: LADRILLO.H,
+            PADDING: LADRILLO.PADDING,
+            VISIBLE: LADRILLO.VISIBLE
+        };
+    }
+}
 
 //-- Velocidad horizontal del objeto
 let velx = 3;
@@ -35,7 +66,19 @@ function update()
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+ // dibujamos los ladrillos
+    for(let i = 0; i < LADRILLO.FILA; i++){
+        for(let j = 0; j < LADRILLO.COLUMNA; j++){
+            // si es viisble, se pinta
+            if(ladrillos[i][j].VISIBLE){
+                ctx.beginPath();
+                ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.W, LADRILLO.H);
+                ctx.fillStyle ='yellow';
+                ctx.fill();
+                ctx.closePath;
+            }
+        }
+    }
   //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
     ctx.arc(x_bola, y_bola, 5, 0, 2 * Math.PI);
