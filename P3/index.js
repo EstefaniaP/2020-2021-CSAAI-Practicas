@@ -9,37 +9,45 @@ canvas.height = 700;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
+//--Estados
+const Estado = {
+    Init: 0,
+    Start: 1,
+    play: 2,
+
+}
 //-- Posición del elemento a animar
 let x_bola = 0;
 let y_bola = 600;
 let x_pala = 100;
 let y_pala = 620;
 
+
 //--Dibujar ladrillos
-let X_inicio = 10;
-let Y_inicio = 10;
+let X_ladrillo = 10;
+let Y_ladrillo = 10;
 
 const LADRILLO = {
-    FILA: 5,
-    COLUMNA: 9,
+    Fila: 5,
+    Columna: 9,
     W: 40, 
     H: 20, 
-    PADDING: 15, 
-    VISIBLE: true 
+    Padding: 15, 
+    Visible: true 
 }
 const ladrillos = [];
 
 // ladrillos
-for(let i = 0; i < LADRILLO.FILA; i++){
+for(let i = 0; i < LADRILLO.Fila; i++){
     ladrillos[i] = []; // inicializa filas
-    for(let j = 0; j < LADRILLO.COLUMNA; j++){
+    for(let j = 0; j < LADRILLO.Columna; j++){
         ladrillos[i][j] = {
-            x: X_inicio + (LADRILLO.W + LADRILLO.PADDING) * j,
-            y: Y_inicio + (LADRILLO.H + LADRILLO.PADDING) * i,
+            x: X_ladrillo + (LADRILLO.W + LADRILLO.Padding) * j,
+            y: Y_ladrillo + (LADRILLO.H + LADRILLO.Padding) * i,
             W: LADRILLO.W,
             H: LADRILLO.H,
-            PADDING: LADRILLO.PADDING,
-            VISIBLE: LADRILLO.VISIBLE
+            Padding: LADRILLO.Padding,
+            Visible: LADRILLO.Visible
         };
     }
 }
@@ -49,6 +57,7 @@ var move = window.event;
 
 //-- Velocidad horizontal del objeto
 let velx = 3;
+let vely = 3;
 
 //--Funcion bola
 function bola(){
@@ -86,26 +95,31 @@ function pala(){
 function update() 
 {
   console.log("test");
+
+
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posiciones de los elementos
   //-- (física del movimiento rectilineo uniforme)
   //-- Comprobar colisión con borde derecho
   
    //-- Condicion de rebote en extremos del canvas
-   if (x_bola < 0 || x_bola >= (canvas.width - 20) ) {
+   if (x_bola < 0 || x_bola >= (canvas.width) ) {
     velx = -velx;
   }
-  
+  //if (y_bola < 0 || y_bola >= (canvas.width - 20) ) {
+    //vely = -vely;
+  //}
   // Actualizar la posición
   x_bola = x_bola + velx;
+  //y_bola = y_bola + vely;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
  // dibujamos los ladrillos
-    for(let i = 0; i < LADRILLO.FILA; i++){
-        for(let j = 0; j < LADRILLO.COLUMNA; j++){
+    for(let i = 0; i < LADRILLO.Fila; i++){
+        for(let j = 0; j < LADRILLO.Columna; j++){
             // si es viisble, se pinta
-            if(ladrillos[i][j].VISIBLE){
+            if(ladrillos[i][j].Visible){
                 ctx.beginPath();
                 ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.W, LADRILLO.H);
                 ctx.fillStyle ='yellow';
@@ -127,16 +141,18 @@ function update()
   //--Movimiento de la pala
   window.onkeydown = (e) => {
       console.log();
-
+      
       switch (e.key){
         case "d":
-            x_pala = x_pala + 10;
-            break;
+            if(x_pala<=canvas.width-100){
+                 x_pala = x_pala + 20;}
+             break;
         case "a":
-            x_pala = x_pala - 10;
+            if(x_pala>0){
+                x_pala = x_pala-20;}
             break;
       }
-  }
+    }
 }
 
 //-- ¡Que empiece la función!
