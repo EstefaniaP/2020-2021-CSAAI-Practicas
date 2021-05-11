@@ -19,8 +19,9 @@ const Estado = {
 //-- Posición del elemento a animar
 let x_bola = 0;
 let y_bola = 600;
-let x_pala = 100;
-let y_pala = 620;
+let r_bola = 5;
+let x_pala = (canvas.width-80)/2;
+let y_pala = canvas.height-20;
 
 
 //--Dibujar ladrillos
@@ -62,7 +63,7 @@ let vely = 3;
 //--Funcion bola
 function bola(){
     ctx.beginPath();
-    ctx.arc(x_bola, y_bola, 5, 0, 2 * Math.PI);
+    ctx.arc(x_bola, y_bola, r_bola, 0, 2 * Math.PI);
 
     //-- Dibujar
     ctx.fillStyle = 'red';
@@ -78,6 +79,8 @@ function bola(){
 //--Funcion pala
 function pala(){
     ctx.beginPath();
+    
+    //ctx.rect((canvas.width-80)/2, canvas.height-20, 80, 20)
     ctx.rect(x_pala, y_pala, 80, 20);
 
     //-- Dibujar
@@ -106,12 +109,15 @@ function update()
    if (x_bola < 0 || x_bola >= (canvas.width) ) {
     velx = -velx;
   }
-  //if (y_bola < 0 || y_bola >= (canvas.width - 20) ) {
-    //vely = -vely;
-  //}
+  if (y_bola < 0 || ((x_bola >= x_pala && x_bola < (x_pala+80)) && y_bola >= y_pala  && y_bola < (y_pala + 20))) {
+    vely = -vely;
+  }
+  //|| y_bola >= (canvas.height-20)
+  //X_bola >= X_bloque && X_bola < (X_bloque+80+10) && Y_bola >= (Y_bloque-10) && Y_bola < (Y_bloque+20+10)
   // Actualizar la posición
   x_bola = x_bola + velx;
-  //y_bola = y_bola + vely;
+  y_bola = y_bola - vely;
+  
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -151,6 +157,8 @@ function update()
             if(x_pala>0){
                 x_pala = x_pala-25;}
             break;
+        case " ":
+            Estado.Init;
       }
     }
 }
