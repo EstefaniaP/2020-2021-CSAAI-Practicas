@@ -145,11 +145,11 @@ function update()
       switch (e.key){
         case "d":
             if(x_pala<=canvas.width-100){
-                 x_pala = x_pala + 20;}
+                 x_pala = x_pala + 25;}
              break;
         case "a":
             if(x_pala>0){
-                x_pala = x_pala-20;}
+                x_pala = x_pala-25;}
             break;
       }
     }
