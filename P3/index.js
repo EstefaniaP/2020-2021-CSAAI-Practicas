@@ -23,7 +23,7 @@ var puntos=0;
 
 //--Dibujar ladrillos
 let X_ladrillo = 10;
-let Y_ladrillo = 10;
+let Y_ladrillo = 50;
 
 const LADRILLO = {
     Fila: 5,
@@ -111,12 +111,19 @@ function romperLadrillo(){
         for(let j = 0; j < LADRILLO.Columna; j++){
             if(x_bola >= ladrillos[i][j].x && x_bola <= (ladrillos[i][j].x+30+10) && y_bola >= ladrillos[i][j].y && y_bola <= (ladrillos[i][j].y)+20+10 && ladrillos[i][j].Visible){
                 ladrillos[i][j].Visible = false;
-                vely = -vely;    
+                vely = -vely; 
+                puntos=puntos+1;   
             }
         }
     }  
 }
 
+function puntuacion(){
+    ctx.font = "15px letranasa";
+    ctx.fillStyle = 'white';
+    ctx.fillText('Puntos: ', 10, 20);
+    ctx.fillText(puntos, 80, 20);
+}
 
 //-- Funcion principal de animacion
 function update() 
@@ -160,6 +167,7 @@ function update()
   //-- 3) Dibujar los elementos visibles
   bola();
   pala();
+  puntuacion();
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
