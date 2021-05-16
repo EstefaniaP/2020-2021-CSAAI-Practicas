@@ -9,13 +9,7 @@ canvas.height = 700;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-//--Estados
-const Estado = {
-    Init: 0,
-    Start: 1,
-    play: 2,
 
-}
 //-- Posición del elemento a animar
 let x_bola = 0;
 let y_bola = 600;
@@ -80,7 +74,6 @@ function bola(){
 function pala(){
     ctx.beginPath();
     
-    //ctx.rect((canvas.width-80)/2, canvas.height-20, 80, 20)
     ctx.rect(x_pala, y_pala, 80, 20);
 
     //-- Dibujar
@@ -94,6 +87,16 @@ function pala(){
   ctx.closePath();
 }
 
+function romperLadrillo(){
+    for(let i = 0; i < LADRILLO.Fila; i++){
+        for(let j = 0; j < LADRILLO.Columna; j++){
+            if(x_bola >= ladrillos[i][j].x && x_bola <= (ladrillos[i][j].x+30+10) && y_bola >= ladrillos[i][j].y && y_bola <= (ladrillos[i][j].y)+20+10 && ladrillos[i][j].Visible){
+                ladrillos[i][j].Visible = false;
+                velocidad_Y = -velocidad_Y;    
+            }
+        }
+    }  
+}
 //-- Funcion principal de animacion
 function update() 
 {
@@ -112,20 +115,19 @@ function update()
   if (y_bola < 0 || ((x_bola >= x_pala && x_bola < (x_pala+80)) && y_bola >= y_pala  && y_bola < (y_pala + 20))) {
     vely = -vely;
   }
-  //|| y_bola >= (canvas.height-20)
-  //X_bola >= X_bloque && X_bola < (X_bloque+80+10) && Y_bola >= (Y_bloque-10) && Y_bola < (Y_bloque+20+10)
+ 
   // Actualizar la posición
   x_bola = x_bola + velx;
   y_bola = y_bola - vely;
-  
+ 
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
- // dibujamos los ladrillos
+ // Se dibujan los ladrillos
     for(let i = 0; i < LADRILLO.Fila; i++){
         for(let j = 0; j < LADRILLO.Columna; j++){
-            // si es viisble, se pinta
-            if(ladrillos[i][j].Visible){
+            //-- Si el ladrillo es visible se pinta
+            if(ladrillos[i][j].Visible==1){
                 ctx.beginPath();
                 ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.W, LADRILLO.H);
                 ctx.fillStyle ='yellow';
@@ -134,15 +136,17 @@ function update()
             }
         }
     }
+   
   //-- 3) Dibujar los elementos visibles
-  //---BOLA
+  
+  
   bola();
   
-  //--PALA
   pala();
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
+  romperLadrillo();
 
   //--Movimiento de la pala
   window.onkeydown = (e) => {
