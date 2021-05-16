@@ -64,7 +64,14 @@ function startGame() {
     playing = true;
     
 }
-
+function reinicio(){
+    playing = false;
+    x_bola = 250;
+    y_bola = 650;
+    velx=0;
+    vely=0;
+    
+}
 //--Funcion bola
 function bola(){
     ctx.beginPath();
@@ -109,9 +116,6 @@ function romperLadrillo(){
     }  
 }
 
-
-
- 
 
 //-- Funcion principal de animacion
 function update() 
@@ -177,6 +181,10 @@ function update()
       case " ":
           startGame();
           break;
+      case "r":
+          reinicio();
+          break;  
+            
     }
   }
 }
