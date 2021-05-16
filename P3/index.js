@@ -96,7 +96,7 @@ function pala(){
     ctx.rect(x_pala, y_pala, 80, 20);
 
     //-- Dibujar
-    ctx.fillStyle = 'rgb(0, 165, 255)';
+    ctx.fillStyle = 'rgb(200, 70, 175)';
 
     //-- Rellenar
     ctx.fill();
@@ -150,7 +150,7 @@ function update()
             if(ladrillos[i][j].Visible==1){
                 ctx.beginPath();
                 ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.W, LADRILLO.H);
-                ctx.fillStyle ='rgb(220, 170, 255)';
+                ctx.fillStyle ='rgb(255, 180, 150)';
                 ctx.fill();
                 ctx.closePath;
             }
