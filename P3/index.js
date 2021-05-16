@@ -22,6 +22,13 @@ var playing = false;
 var puntos=0;
 var Vida=3;
 
+//-- Movimiento pala
+var move = window.event;
+
+//-- Velocidad horizontal del objeto
+let velx = 0;
+let vely = 0;
+
 //--Dibujar ladrillos
 let X_ladrillo = 10;
 let Y_ladrillo = 50;
@@ -51,21 +58,14 @@ for(let i = 0; i < LADRILLO.Fila; i++){
     }
 }
 
-//-- Movimiento pala
-var move = window.event;
-
-//-- Velocidad horizontal del objeto
-let velx = 0;
-let vely = 0;
-
 function startGame() {
     velx =3;
     vely =3;
     x_bola = 250;
     y_bola = 550;
     playing = true;
-    
 }
+
 function reinicio(){
     playing = false;
     x_bola = 250;
@@ -79,7 +79,6 @@ function reinicio(){
             ladrillos[i][j].Visible = true;
         }
     }
-    
 }
 //--Funcion bola
 function bola(){
@@ -143,7 +142,6 @@ function vidas(){
         ctx.fillStyle = 'white';
         ctx.fillText('Game Over ', 160, 300);
     }
-    
 }
 
 //-- Funcion principal de animacion
@@ -163,7 +161,6 @@ function update()
     vely = -vely;
   }
 
-    
   // Actualizar la posición
   x_bola = x_bola + velx;
   y_bola = y_bola - vely;
@@ -190,14 +187,11 @@ function update()
   pala();
   puntuacion();
   vidas();
-  
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
   romperLadrillo();
   
-  
-
    //--Movimiento de la pala
  window.onkeydown = (e) => {
     console.log();
@@ -223,5 +217,4 @@ function update()
 }
 
 //-- ¡Que empiece la función!
-
 update();
