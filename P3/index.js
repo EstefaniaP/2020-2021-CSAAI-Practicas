@@ -72,8 +72,13 @@ function reinicio(){
     y_bola = 550;
     velx=0;
     vely=0;
-    Vida=0;
+    Vida=3;
     puntos=0;
+    for(let i = 0; i < LADRILLO.Fila; i++){
+        for(let j = 0; j < LADRILLO.Columna; j++){
+            ladrillos[i][j].Visible = true;
+        }
+    }
     
 }
 //--Funcion bola
@@ -185,10 +190,12 @@ function update()
   pala();
   puntuacion();
   vidas();
+  
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
   romperLadrillo();
+  
   
 
    //--Movimiento de la pala
