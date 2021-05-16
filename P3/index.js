@@ -59,8 +59,8 @@ for(let i = 0; i < LADRILLO.Fila; i++){
 }
 
 function startGame() {
-    velx =3;
-    vely =3;
+    velx = 3;
+    vely = 3;
     x_bola = 250;
     y_bola = 550;
     playing = true;
@@ -111,7 +111,9 @@ function romperLadrillo(){
         for(let j = 0; j < LADRILLO.Columna; j++){
             if(x_bola >= ladrillos[i][j].x && x_bola <= (ladrillos[i][j].x+30+10) && y_bola >= ladrillos[i][j].y && y_bola <= (ladrillos[i][j].y)+20+10 && ladrillos[i][j].Visible){
                 ladrillos[i][j].Visible = false;
+                vely=vely+1;
                 vely = -vely; 
+                velx=velx+1;
                 puntos=puntos+1;   
             }
         }
