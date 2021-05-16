@@ -20,6 +20,7 @@ let y_pala = canvas.height-20;
 //--Variable juego
 var playing = false;
 var puntos=0;
+var Vida=0;
 
 //--Dibujar ladrillos
 let X_ladrillo = 10;
@@ -71,6 +72,8 @@ function reinicio(){
     y_bola = 550;
     velx=0;
     vely=0;
+    Vida=0;
+    puntos=0;
     
 }
 //--Funcion bola
@@ -125,6 +128,13 @@ function puntuacion(){
     ctx.fillText(puntos, 80, 20);
 }
 
+function vidas(){
+    ctx.font = "15px letranasa";
+    ctx.fillStyle = 'white';
+    ctx.fillText('Vidas: ', 400, 20);
+    ctx.fillText(Vida, 470, 20);
+}
+
 //-- Funcion principal de animacion
 function update() 
 {
@@ -168,6 +178,7 @@ function update()
   bola();
   pala();
   puntuacion();
+  vidas();
 
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
