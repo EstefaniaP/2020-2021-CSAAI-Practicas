@@ -17,6 +17,8 @@ let r_bola = 5;
 let x_pala = (canvas.width-80)/2;
 let y_pala = canvas.height-20;
 
+//--Variable juego
+var playing=false;
 
 //--Dibujar ladrillos
 let X_ladrillo = 10;
@@ -92,22 +94,22 @@ function romperLadrillo(){
         for(let j = 0; j < LADRILLO.Columna; j++){
             if(x_bola >= ladrillos[i][j].x && x_bola <= (ladrillos[i][j].x+30+10) && y_bola >= ladrillos[i][j].y && y_bola <= (ladrillos[i][j].y)+20+10 && ladrillos[i][j].Visible){
                 ladrillos[i][j].Visible = false;
-                velocidad_Y = -velocidad_Y;    
+                vely = -vely;    
             }
         }
     }  
 }
+
 //-- Funcion principal de animacion
 function update() 
 {
   console.log("test");
-
-
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posiciones de los elementos
   //-- (física del movimiento rectilineo uniforme)
   //-- Comprobar colisión con borde derecho
   
+
    //-- Condicion de rebote en extremos del canvas
    if (x_bola < 0 || x_bola >= (canvas.width) ) {
     velx = -velx;
@@ -115,7 +117,8 @@ function update()
   if (y_bola < 0 || ((x_bola >= x_pala && x_bola < (x_pala+80)) && y_bola >= y_pala  && y_bola < (y_pala + 20))) {
     vely = -vely;
   }
- 
+  
+  
   // Actualizar la posición
   x_bola = x_bola + velx;
   y_bola = y_bola - vely;
@@ -136,12 +139,9 @@ function update()
             }
         }
     }
-   
+
   //-- 3) Dibujar los elementos visibles
-  
-  
   bola();
-  
   pala();
 
   //-- 4) Volver a ejecutar update cuando toque
@@ -161,8 +161,9 @@ function update()
             if(x_pala>0){
                 x_pala = x_pala-25;}
             break;
-        case " ":
-            Estado.Init;
+        case 32:
+            playing=true;
+            break;
       }
     }
 }
