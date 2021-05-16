@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
 canvas.width = 500;
-canvas.height = 700;
+canvas.height = 650;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -12,13 +12,14 @@ const ctx = canvas.getContext("2d");
 
 //-- Posición del elemento a animar
 let x_bola = 250;
-let y_bola = 650;
+let y_bola = 550;
 let r_bola = 5;
 let x_pala = (canvas.width-80)/2;
 let y_pala = canvas.height-20;
 
 //--Variable juego
 var playing = false;
+var puntos=0;
 
 //--Dibujar ladrillos
 let X_ladrillo = 10;
@@ -60,14 +61,14 @@ function startGame() {
     velx =3;
     vely =3;
     x_bola = 250;
-    y_bola = 650;
+    y_bola = 550;
     playing = true;
     
 }
 function reinicio(){
     playing = false;
     x_bola = 250;
-    y_bola = 650;
+    y_bola = 550;
     velx=0;
     vely=0;
     
@@ -78,7 +79,7 @@ function bola(){
     ctx.arc(x_bola, y_bola, r_bola, 0, 2 * Math.PI);
 
     //-- Dibujar
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = 'rgb(255, 255, 255)';
 
     //-- Rellenar
     ctx.fill();
@@ -95,7 +96,7 @@ function pala(){
     ctx.rect(x_pala, y_pala, 80, 20);
 
     //-- Dibujar
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = 'rgb(0, 165, 255)';
 
     //-- Rellenar
     ctx.fill();
@@ -149,7 +150,7 @@ function update()
             if(ladrillos[i][j].Visible==1){
                 ctx.beginPath();
                 ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.W, LADRILLO.H);
-                ctx.fillStyle ='yellow';
+                ctx.fillStyle ='rgb(220, 170, 255)';
                 ctx.fill();
                 ctx.closePath;
             }
