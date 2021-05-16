@@ -22,6 +22,11 @@ var playing = false;
 var puntos=0;
 var Vida=3;
 
+//--Sonidos
+const over = new Audio("gameover.mp3");
+
+
+
 //-- Movimiento pala
 var move = window.event;
 
@@ -59,8 +64,8 @@ for(let i = 0; i < LADRILLO.Fila; i++){
 }
 
 function startGame() {
-    velx = Math.floor(Math.random() * 6);;
-    vely = Math.floor(Math.random() * 6);;
+    velx = Math.floor(Math.random() * 5)+2;; //Velocidad del 2 al 5
+    vely = Math.floor(Math.random() * 5)+2;;
     x_bola = 250;
     y_bola = 550;
     playing = true;
@@ -80,6 +85,8 @@ function reinicio(){
         }
     }
 }
+
+
 //--Funcion bola
 function bola(){
     ctx.beginPath();
@@ -115,7 +122,9 @@ function romperLadrillo(){
                 vely = -vely; 
                 velx=velx+1;
                 puntos=puntos+1;   
+                
             }
+            
         }
     }  
 }
@@ -140,9 +149,11 @@ function vidas(){
         vely=0;
     }
     if(y_bola>650 && Vida == 1){
+        over.play();
         ctx.font = "30px letranasa";
         ctx.fillStyle = 'white';
         ctx.fillText('Game Over ', 160, 300);
+        
     }
 }
 
