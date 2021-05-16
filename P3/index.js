@@ -20,7 +20,7 @@ let y_pala = canvas.height-20;
 //--Variable juego
 var playing = false;
 var puntos=0;
-var Vida=0;
+var Vida=3;
 
 //--Dibujar ladrillos
 let X_ladrillo = 10;
@@ -80,13 +80,10 @@ function reinicio(){
 function bola(){
     ctx.beginPath();
     ctx.arc(x_bola, y_bola, r_bola, 0, 2 * Math.PI);
-
     //-- Dibujar
     ctx.fillStyle = 'rgb(255, 255, 255)';
-
     //-- Rellenar
     ctx.fill();
-
     //-- Dibujar el trazo
     ctx.stroke()
   ctx.closePath();
@@ -95,15 +92,11 @@ function bola(){
 //--Funcion pala
 function pala(){
     ctx.beginPath();
-    
     ctx.rect(x_pala, y_pala, 80, 20);
-
     //-- Dibujar
     ctx.fillStyle = 'rgb(200, 70, 175)';
-
     //-- Rellenar
     ctx.fill();
-
     //-- Dibujar el trazo
     ctx.stroke()
   ctx.closePath();
@@ -133,6 +126,19 @@ function vidas(){
     ctx.fillStyle = 'white';
     ctx.fillText('Vidas: ', 400, 20);
     ctx.fillText(Vida, 470, 20);
+    if(y_bola>650 && Vida > 1){
+        Vida=Vida-1; 
+        x_bola = 250;
+        y_bola = 550;
+        velx=0;
+        vely=0;
+    }
+    if(y_bola>650 && Vida == 1){
+        ctx.font = "30px letranasa";
+        ctx.fillStyle = 'white';
+        ctx.fillText('Game Over ', 160, 300);
+    }
+    
 }
 
 //-- Funcion principal de animacion
@@ -152,7 +158,7 @@ function update()
     vely = -vely;
   }
 
-  
+    
   // Actualizar la posición
   x_bola = x_bola + velx;
   y_bola = y_bola - vely;
