@@ -62,6 +62,7 @@ function startGame() {
     x_bola = 250;
     y_bola = 650;
     playing = true;
+    
 }
 
 //--Funcion bola
@@ -179,7 +180,7 @@ function update()
     }
   }
 }
-//startGame();
+
 //-- ¡Que empiece la función!
 
 update();
