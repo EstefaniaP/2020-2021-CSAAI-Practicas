@@ -59,8 +59,8 @@ for(let i = 0; i < LADRILLO.Fila; i++){
 }
 
 function startGame() {
-    velx = 3;
-    vely = 3;
+    velx = Math.floor(Math.random() * 6);;
+    vely = Math.floor(Math.random() * 6);;
     x_bola = 250;
     y_bola = 550;
     playing = true;
