@@ -3,13 +3,18 @@
   azul para distinguirlo
 */
 
+/*Añadida fuente nasa*/
+@font-face{
+  font-family: letranasa;
+  src: url('letranasa.ttf');
+}
+
 body {
   background-image: url("nubes.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  
   color: white;
   font-family: letranasa;
 
@@ -21,6 +26,7 @@ canvas {
     border-width: 1px;
     border-color: rgb(255, 255, 255);
     border-radius: 5px;
+    font-family: letranasa;
   }
 
   h2{
