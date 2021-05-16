@@ -11,14 +11,14 @@ const ctx = canvas.getContext("2d");
 
 
 //-- Posición del elemento a animar
-let x_bola = 0;
-let y_bola = 600;
+let x_bola = 250;
+let y_bola = 650;
 let r_bola = 5;
 let x_pala = (canvas.width-80)/2;
 let y_pala = canvas.height-20;
 
 //--Variable juego
-var playing=false;
+var playing = false;
 
 //--Dibujar ladrillos
 let X_ladrillo = 10;
@@ -53,8 +53,16 @@ for(let i = 0; i < LADRILLO.Fila; i++){
 var move = window.event;
 
 //-- Velocidad horizontal del objeto
-let velx = 3;
-let vely = 3;
+let velx = 0;
+let vely = 0;
+
+function startGame() {
+    velx =3;
+    vely =3;
+    x_bola = 250;
+    y_bola = 650;
+    playing = true;
+}
 
 //--Funcion bola
 function bola(){
@@ -100,6 +108,10 @@ function romperLadrillo(){
     }  
 }
 
+
+
+ 
+
 //-- Funcion principal de animacion
 function update() 
 {
@@ -109,7 +121,6 @@ function update()
   //-- (física del movimiento rectilineo uniforme)
   //-- Comprobar colisión con borde derecho
   
-
    //-- Condicion de rebote en extremos del canvas
    if (x_bola < 0 || x_bola >= (canvas.width) ) {
     velx = -velx;
@@ -117,12 +128,12 @@ function update()
   if (y_bola < 0 || ((x_bola >= x_pala && x_bola < (x_pala+80)) && y_bola >= y_pala  && y_bola < (y_pala + 20))) {
     vely = -vely;
   }
-  
+
   
   // Actualizar la posición
   x_bola = x_bola + velx;
   y_bola = y_bola - vely;
- 
+
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -147,26 +158,28 @@ function update()
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
   romperLadrillo();
+  
 
-  //--Movimiento de la pala
-  window.onkeydown = (e) => {
-      console.log();
-      
-      switch (e.key){
-        case "d":
-            if(x_pala<=canvas.width-100){
-                 x_pala = x_pala + 25;}
-             break;
-        case "a":
-            if(x_pala>0){
-                x_pala = x_pala-25;}
-            break;
-        case 32:
-            playing=true;
-            break;
-      }
+   //--Movimiento de la pala
+ window.onkeydown = (e) => {
+    console.log();
+    
+    switch (e.key){
+      case "d":
+          if(x_pala<=canvas.width-100){
+               x_pala = x_pala + 25;}
+           break;
+      case "a":
+          if(x_pala>0){
+              x_pala = x_pala-25;}
+          break;
+      case " ":
+          startGame();
+          break;
     }
+  }
 }
-
+//startGame();
 //-- ¡Que empiece la función!
+
 update();
