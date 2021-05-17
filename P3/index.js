@@ -27,6 +27,7 @@ const over = new Audio("gameover.mp3");
 
 
 
+
 //-- Movimiento pala
 var move = window.event;
 
@@ -122,7 +123,6 @@ function romperLadrillo(){
                 vely = -vely; 
                 velx=velx+1;
                 puntos=puntos+1;   
-                
             }
             
         }
