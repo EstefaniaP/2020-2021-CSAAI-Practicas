@@ -16,9 +16,6 @@ const range_value_Verde = document.getElementById('range_value_Verde');
 const range_value_Azul = document.getElementById('range_value_Azul');
 
 //-- Función de retrollamada de imagen cargada
-//-- La imagen no se carga instantaneamente, sino que
-//-- lleva un tiempo. Sólo podemos acceder a ella una vez
-//-- que esté totalmente cargada
 img.onload = function () {
 
   //-- Se establece como tamaño del canvas el mismo
@@ -29,7 +26,6 @@ img.onload = function () {
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
-
   console.log("Imagen lista...");
 };
 
@@ -37,18 +33,34 @@ function color(){
 //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
+  
   //-- Obtener la imagen del canvas en pixeles
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
+
   //-- Mostrar el nuevo valor del deslizador
   range_value_Rojo.innerHTML = deslizador_Rojo.value;
+  range_value_Verde.innerHTML = deslizador_Verde.value;
+  range_value_Azul.innerHTML = deslizador_Azul.value;
+
   //-- Obtener el umbral de rojo del desliador
-  umbral_Rojo = deslizador_Rojo.value
+  var umbral_Rojo = deslizador_Rojo.value;
+  var umbral_Verde = deslizador_Verde.value;
+  var umbral_Azul = deslizador_Azul.value;
+
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    if (data[i] > umbral_Rojo)
+    if (data[i] > umbral_Rojo){
       data[i] = umbral_Rojo;
+    }
+    if (data[i+1] > umbral_Verde){
+      data[i+1] = umbral_Verde;
+    }
+      if (data[i+2] > umbral_Azul){
+      data[i+2] = umbral_Azul;
+      }
   }
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
@@ -57,9 +69,14 @@ function color(){
 
 //-- Funcion de retrollamada del deslizador
 deslizador_Rojo.oninput = () => {
-  
-  color();
-  
+    color();
 }
+deslizador_Verde.oninput = () => {
+    color();
+}
+deslizador_Azul.oninput = () => {
+    color();
+}
+
 
 console.log("Fin...");
