@@ -8,6 +8,8 @@ const ctx = canvas.getContext('2d');
 const gris = document.getElementById('gris');
 const origen = document.getElementById('origen');
 const colores = document.getElementById('colores');
+const vuelta = document.getElementById('vuelta');
+
 
 const img_1 = document.getElementById('img_1');
 const img_2 = document.getElementById('img_2');
@@ -32,6 +34,7 @@ img.onload = function () {
   ctx.drawImage(img, 0,0);
   console.log("Imagen lista...");
 };
+
 
 function color(){
   ctx.drawImage(img, 0,0);
@@ -68,6 +71,7 @@ function color(){
   ctx.putImageData(imgData, 0, 0);
 }
 
+
 //-- Funcion de retrollamada del deslizador
     deslizador_Rojo.oninput = () => {
         color();
@@ -79,11 +83,13 @@ function color(){
         color();
     }
 
+
 function operativo(){
     deslizador_Rojo.disabled = false;
     deslizador_Verde.disabled = false;
     deslizador_Azul.disabled = false;
 }
+
 
 function apagado(){
     deslizador_Rojo.disabled = true;
@@ -114,18 +120,6 @@ original.onclick = () =>{
     ctx.drawImage(img, 0,0);
 }
 
-//funcion para las diferentes imagenes
-img_1.onclick = () => {
-    img.src="ISS.png";
-}
-
-img_2.onclick = () => {
-    img.src="img1.png";
-}
-img_3.onclick = () => {
-    img.src="img2.png";
-}
-
 
 gris.onclick = () => {
     apagado();
@@ -143,6 +137,28 @@ gris.onclick = () => {
     }
 //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
+}
+
+
+//boton boca abajo
+vuelta.onclick = () =>{
+    apagado();
+    ctx.drawImage(img, 0,0);
+    ctx.translate(0,img.height);
+    ctx.scale(1,-1);
+    ctx.drawImage(img, 0, 0);
+  }
+
+//funcion para las diferentes imagenes
+img_1.onclick = () => {
+    img.src="ISS.png";
+}
+
+img_2.onclick = () => {
+    img.src="img1.png";
+}
+img_3.onclick = () => {
+    img.src="img2.png";
 }
 
 console.log("Fin...");
