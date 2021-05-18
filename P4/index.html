@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Ej-05.css">
-    <script src="Ej-05.js" defer></script>
-    <title>Ejemplo 5</title>
+    <link rel="stylesheet" href="stylo.css">
+    <script src="index.js" defer></script>
+    <title>Procesador de Imagenes</title>
 </head>
 <body>
     <canvas id="canvas"></canvas>
-    <img src="nubes.jpg" id="imagesrc">
+    <img src="ISS.png" id="imagesrc">
     <p>Establece el umbral de rojo:</p>
-    <input type="range" id="deslizador" min="0" max="255" value="255"/>
-    <p id="range_value">00</p>
+    <input type="range" id="deslizador_Rojo" min="0" max="255" value="255"/>
+    <p id="range_value_Rojo">00</p>
+
+    <p>Establece el umbral de verde:</p>
+    <input type="range" id="deslizador_Verde" min="0" max="255" value="255"/>
+    <p id="range_value_Verde">00</p>
+
+    <p>Establece el umbral de azul:</p>
+    <input type="range" id="deslizador_Azul" min="0" max="255" value="255"/>
+    <p id="range_value_Azul">00</p>
 </body>
 </html>
