@@ -1,3 +1,25 @@
+/*Añadida fuente nasa*/
+@font-face{
+    font-family: letranasa;
+    src: url('letranasa.ttf');
+  }
+
+  body {
+    background-image: url("fondo1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: white;
+    font-family: letranasa;
+  }
+  p{
+    font-size: small;
+    color: rgb(39, 38, 39);
+    font-family: letranasa;
+  }
+
 #imagesrc {
     /*display: none;*/
+    
   }
