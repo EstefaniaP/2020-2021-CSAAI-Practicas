@@ -106,4 +106,22 @@ original.onclick = () =>{
     ctx.drawImage(img, 0,0);
 }
 
+gris.onclick = () => {
+    apagado();
+    ctx.drawImage(img, 0,0);
+
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data
+    var gris = 0;
+
+    for (var i = 0; i < data.length; i+=4) {
+        gris = (3 * data[i] + 4 * data[i+1] + data[i+2])/8
+        data[i] = gris;
+        data[i+1] = gris;
+        data[i+2] = gris;
+    }
+//-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgData, 0, 0);
+}
+
 console.log("Fin...");
