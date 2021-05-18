@@ -7,8 +7,18 @@
     <title>Procesador de Imagenes</title>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <img src="ISS.png" id="imagesrc">
+    <h1>Procesador de imagenes</h1>
+    <div class="imagenes">
+        <h2>Imagen original</h2>
+        <img src="ISS.png" id="imagesrc">
+        
+        <h2>Imagen filtrada</h2>
+        <canvas id="canvas"></canvas>
+    </div>
+    
+
+    
+
     <p>Establece el umbral de rojo:</p>
     <input type="range" id="deslizador_Rojo" min="0" max="255" value="255"/>
     <p id="range_value_Rojo">00</p>
