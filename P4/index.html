@@ -7,35 +7,44 @@
     <title>Procesador de Imagenes</title>
 </head>
 <body>
+    <br>
     <h1>Procesador de imagenes</h1>
     
-    <div class="imagenes">
+    <div class="original">
         <p>Imagen original</p>
         <img src="ISS.png" id="imagesrc">
-        
+    </div>
+    <div class="filtrada">
         <p>Imagen filtrada</p>
         <canvas id="canvas"></canvas>
     </div>
-       
-    <div class="deslizadores">
-        <p>Establece el umbral de rojo:</p>
-        <input type="range" id="deslizador_Rojo" min="0" max="255" value="255"/>
-        <p id="range_value_Rojo">00</p>
-
-        <p>Establece el umbral de verde:</p>
-        <input type="range" id="deslizador_Verde" min="0" max="255" value="255"/>
-        <p id="range_value_Verde">00</p>
-
-        <p>Establece el umbral de azul:</p>
-        <input type="range" id="deslizador_Azul" min="0" max="255" value="255"/>
-        <p id="range_value_Azul">00</p>
-    </div>
-
+     
     <div class="filtros">
         <button type="button" id="original">Original</button>
         <button type="button" id="colores">Color</button>
         <button type="button" id="gris">Escala de grises</button>
+
     </div>
+
+    <br><br>
+
+    <div class="deslizadores">
+        <p id="rojo">Umbral rojo:</p>
+        <input type="range" id="deslizador_Rojo" min="0" max="255" value="255" disable/>
+        <p id="range_value_Rojo">00</p>
+
+        <p>Umbral verde:</p>
+        <input type="range" id="deslizador_Verde" min="0" max="255" value="255" disable/>
+        <p id="range_value_Verde">00</p>
+        
+        <p>Umbral azul:</p>
+        <input type="range" id="deslizador_Azul" min="0" max="255" value="255" disable/>
+        <p id="range_value_Azul">00</p>
+    </div>
+
+    
+
+    
 
 </body>
 </html>
