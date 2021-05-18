@@ -21,15 +21,10 @@
 
   button{
     background-size: auto;
-    background-color: #3e0441;
+    background-color: #c00000;
     font-family: letranasa;
     font-size: 15px;
     margin: 10px;
     border-radius: 10px;
     color: #fff9fd;
-  }
-
-#imagesrc {
-    /*display: none;*/
-    
   }
