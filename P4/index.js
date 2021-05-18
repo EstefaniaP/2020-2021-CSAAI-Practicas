@@ -56,27 +56,11 @@ function color(){
       data[i+2] = umbral_Azul;
       }
   }
-
-  color.onclick = () => {
-    ctx.drawImage(img, 0,0);
-
-    deslizador_Rojo.value = 255;
-    range_value_Rojo.innerHTML = deslizador_Rojo.value;
-
-    deslizador_Verde.value = 255;
-    range_value_Verde.innerHTML = deslizador_Verde.value;
-
-    deslizador_Azul.value = 255;
-    range_value_Azul.innerHTML = deslizador_Azul.value;
-  }
-
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
 
-
 //-- Funcion de retrollamada del deslizador
-colores.onclick = () =>{
     deslizador_Rojo.oninput = () => {
         color();
     }
@@ -86,9 +70,37 @@ colores.onclick = () =>{
     deslizador_Azul.oninput = () => {
         color();
     }
+
+function operativo(){
+    deslizador_Rojo.disabled = false;
+    deslizador_Verde.disabled = false;
+    deslizador_Azul.disabled = false;
 }
 
+function apagado(){
+    deslizador_Rojo.disabled = true;
+    deslizador_Verde.disabled = true;
+    deslizador_Azul.disabled = true;
+}
+
+
+colores.onclick = () => {
+    operativo();
+    ctx.drawImage(img, 0,0);
+    
+    deslizador_Rojo.value = 255;
+    range_value_Rojo.innerHTML = deslizador_Rojo.value;
+    
+    deslizador_Verde.value = 255;
+    range_value_Verde.innerHTML = deslizador_Verde.value;
+    
+    deslizador_Azul.value = 255;
+    range_value_Azul.innerHTML = deslizador_Azul.value;
+}
+    
+    
 original.onclick = () =>{
+    apagado();
     canvas.width = img.width;
     canvas.height = img.height;
     ctx.drawImage(img, 0,0);
