@@ -5,6 +5,11 @@ const canvas = document.getElementById('canvas');
 const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
+const gris = document.getElementById('gris');
+const origen = document.getElementById('origen');
+const colores = document.getElementById('colores');
+const abajo = document.getElementById('abajo');
+
 //-- Acceso al deslizador
 const deslizador_Rojo = document.getElementById('deslizador_Rojo');
 const deslizador_Verde = document.getElementById('deslizador_Verde');
