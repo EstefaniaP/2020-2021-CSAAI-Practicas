@@ -17,21 +17,15 @@ const range_value_Azul = document.getElementById('range_value_Azul');
 
 //-- Función de retrollamada de imagen cargada
 img.onload = function () {
-
-  //-- Se establece como tamaño del canvas el mismo
-  //-- que el de la imagen original
   canvas.width = img.width;
   canvas.height = img.height;
 
   //-- Situar la imagen original en el canvas
-  //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
   console.log("Imagen lista...");
 };
 
 function color(){
-//-- Situar la imagen original en el canvas
-  //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
   
   //-- Obtener la imagen del canvas en pixeles
@@ -62,21 +56,42 @@ function color(){
       data[i+2] = umbral_Azul;
       }
   }
+
+  color.onclick = () => {
+    ctx.drawImage(img, 0,0);
+
+    deslizador_Rojo.value = 255;
+    range_value_Rojo.innerHTML = deslizador_Rojo.value;
+
+    deslizador_Verde.value = 255;
+    range_value_Verde.innerHTML = deslizador_Verde.value;
+
+    deslizador_Azul.value = 255;
+    range_value_Azul.innerHTML = deslizador_Azul.value;
+  }
+
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
 }
 
 
 //-- Funcion de retrollamada del deslizador
-deslizador_Rojo.oninput = () => {
-    color();
-}
-deslizador_Verde.oninput = () => {
-    color();
-}
-deslizador_Azul.oninput = () => {
-    color();
+colores.onclick = () =>{
+    deslizador_Rojo.oninput = () => {
+        color();
+    }
+    deslizador_Verde.oninput = () => {
+        color();
+    }
+    deslizador_Azul.oninput = () => {
+        color();
+    }
 }
 
+original.onclick = () =>{
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0,0);
+}
 
 console.log("Fin...");
