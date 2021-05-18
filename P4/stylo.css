@@ -12,11 +12,17 @@
     background-size: 100% 100%;
     color: white;
     font-family: letranasa;
+    text-align: center;
   }
   p{
     font-size: small;
     color: rgb(39, 38, 39);
     font-family: letranasa;
+  }
+  h1{
+    font-size: small;
+    
+    color: rgb(39, 38, 39);
   }
 
   button{
@@ -28,3 +34,15 @@
     border-radius: 10px;
     color: #fff9fd;
   }
+
+.imagenes{
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 100px;
+    padding-left: 35px;
+    padding-right: 35px;
+    column-count: 2;
+    color: rgb(194, 19, 106);
+    
+}
