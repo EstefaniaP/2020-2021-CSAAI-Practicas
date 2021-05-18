@@ -8,7 +8,10 @@ const ctx = canvas.getContext('2d');
 const gris = document.getElementById('gris');
 const origen = document.getElementById('origen');
 const colores = document.getElementById('colores');
-const abajo = document.getElementById('abajo');
+
+const img_1 = document.getElementById('img_1');
+const img_2 = document.getElementById('img_2');
+const img_3 = document.getElementById('img_3');
 
 //-- Acceso al deslizador
 const deslizador_Rojo = document.getElementById('deslizador_Rojo');
@@ -110,6 +113,19 @@ original.onclick = () =>{
     canvas.height = img.height;
     ctx.drawImage(img, 0,0);
 }
+
+//funcion para las diferentes imagenes
+img_1.onclick = () => {
+    img.src="ISS.png";
+}
+
+img_2.onclick = () => {
+    img.src="img1.png";
+}
+img_3.onclick = () => {
+    img.src="img2.png";
+}
+
 
 gris.onclick = () => {
     apagado();
