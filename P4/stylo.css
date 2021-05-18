@@ -6,43 +6,61 @@
 
   body {
     background-image: url("fondo1.jpg");
-    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: 100% 100%;
-    color: white;
+    color: rgb(34, 34, 34);
     font-family: letranasa;
     text-align: center;
-  }
-  p{
-    font-size: small;
-    color: rgb(39, 38, 39);
-    font-family: letranasa;
-  }
-  h1{
-    font-size: small;
-    
-    color: rgb(39, 38, 39);
   }
 
   button{
     background-size: auto;
-    background-color: #c00000;
+    background-color: #ca0c7b;
     font-family: letranasa;
     font-size: 15px;
     margin: 10px;
     border-radius: 10px;
     color: #fff9fd;
   }
+  
 
-.imagenes{
-    width: 900px;
-    margin: 0 auto;
-    padding-top: 15px;
-    padding-bottom: 100px;
-    padding-left: 35px;
-    padding-right: 35px;
-    column-count: 2;
-    color: rgb(194, 19, 106);
-    
+.original{   
+    float: left;
+    font-weight: 10;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(28, 98, 160);
+    margin-left: 400px;
+  
 }
+
+.filtrada{
+    float: right;
+    font-weight: 10;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(28, 98, 160);   
+    margin-right: 400px;
+}
+
+.filtros{
+    margin-top: 400px;
+}
+
+.deslizadores{
+    font-size: 15px;
+    font-family: letranasa;
+    color: black;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    column-count: 3;
+}
+
+#range_value_Rojo, #range_value_Verde, #range_value_Azul{
+    margin-right: 30px;
+}
+
