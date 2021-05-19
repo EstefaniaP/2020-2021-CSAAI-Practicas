@@ -9,6 +9,7 @@ const gris = document.getElementById('gris');
 const origen = document.getElementById('origen');
 const colores = document.getElementById('colores');
 const vuelta = document.getElementById('vuelta');
+const ruido = document.getElementById('ruido');
 
 
 const img_1 = document.getElementById('img_1');
@@ -140,7 +141,6 @@ gris.onclick = () => {
 }
 
 
-//boton boca abajo
 vuelta.onclick = () =>{
     apagado();
     ctx.drawImage(img, 0,0);
@@ -149,16 +149,30 @@ vuelta.onclick = () =>{
     ctx.drawImage(img, 0, 0);
   }
 
+  ruido.onclick = () => {
+    apagado();
+    var ruidos = 0;
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data;
+    for (var i = 0; i < data.length; i+=4) {
+        ruidos = Math.floor(Math.random() * (40 + 40 + 1) - 40)
+        data[i] += ruidos; 
+        data[i+1] += ruidos; 
+        data[i+2] += ruidos; 
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+
 //funcion para las diferentes imagenes
 img_1.onclick = () => {
-    img.src="ISS.png";
+    img.src="img1.jpg";
 }
 
 img_2.onclick = () => {
-    img.src="img1.png";
+    img.src="img2.jpg";
 }
 img_3.onclick = () => {
-    img.src="img2.png";
+    img.src="img3.jpg";
 }
 
 console.log("Fin...");
