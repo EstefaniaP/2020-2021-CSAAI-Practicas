@@ -7,6 +7,7 @@
 body {
     background-image: url("eclipse.jpg");
     font-family: letranasa;
+    background-repeat: no-repeat;
     
   }
   h1{
