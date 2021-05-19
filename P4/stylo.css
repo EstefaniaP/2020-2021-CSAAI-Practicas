@@ -5,7 +5,7 @@
   }
 
   body {
-    background-image: url("fondo1.jpg");
+    background-image: url("fondo.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: rgb(34, 34, 34);
@@ -29,8 +29,8 @@
     font-weight: 10;
     font-size: 15px;
     text-align: center;
-    color: rgb(28, 98, 160);
-    margin-left: 400px;
+    color: rgb(212, 5, 143);
+    margin-left: 200px;
   
 }
 
@@ -39,8 +39,8 @@
     font-weight: 10;
     font-size: 15px;
     text-align: center;
-    color: rgb(28, 98, 160);   
-    margin-right: 400px;
+    color: rgb(212, 5, 143);   
+    margin-right: 200px;
 }
 
 .filtros{
@@ -52,8 +52,8 @@
     font-family: letranasa;
     color: black;
     text-align: center;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
     display: flex;
     justify-content: center;
     margin-left: auto;
