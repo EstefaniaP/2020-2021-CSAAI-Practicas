@@ -6,3 +6,5 @@ Práctica 1: CV Mary K Jackson https://estefaniap.github.io/2020-2021-CSAAI-Prac
 Práctica 2: Astro Calc https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P2/
 
 Práctica 3: Breakout https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P3/
+
+Práctica 4: Procesador de imágenes https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P4/
