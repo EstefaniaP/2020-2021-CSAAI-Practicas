@@ -62,7 +62,6 @@ btn_src_on.onclick = () => {
 btn_src_off.onclick = () => {
     directo.poster = TEST_IMAGE_URL;
     stopVideos();
-    
   };
 
 //-- Botón de Test
@@ -74,35 +73,37 @@ btn_test.onclick = () => {
 
 //-- Botón de Selección de la cámara 1
 btn_video1.onclick = () => {
-    directo.src = video1.src;
-    directo.currentTime = video1.currentTime;
-    directo.play();
-    directo.poster='#';
+    video_1();
 };
 
 //-- Botón de Selección de la cámara 2
 btn_video2.onclick = () => {
-    directo.src = video2.src;
-    directo.currentTime = video2.currentTime;
-    directo.play();
-    directo.poster='#';
+    video_2();
 };
 
 //-- Botón de Selección de la cámara 3
 btn_video3.onclick = () => {
-    directo.src = video3.src;
-    directo.currentTime = video3.currentTime;
-    directo.play();
-    directo.poster='#';
+    video_3();
 };
 
+//-- Boton de FUENTES-Off
+btn_src_off.onclick = () => {
+    directo.poster = TEST_IMAGE_URL;
+    stopVideos();
+  };
+
 //Para pulsar al video y que haga de boton
-/*video1.onclick = () => {
-    directo.src = video1.src;
-    directo.currentTime = video1.currentTime;
-    directo.play();
-    directo.poster='#';
-};*/
+video1.onclick = () => {
+    video_1();
+};
+
+video2.onclick = () => {
+    video_2();
+};
+
+video3.onclick = () => {
+    video_3();
+};
 
 const stopVideos = () => {
     video1.src = TEST_IMAGE_URL;
@@ -110,3 +111,24 @@ const stopVideos = () => {
     video3.src = TEST_IMAGE_URL;
     directo.src = TEST_IMAGE_URL;
 };
+
+const video_1 = () =>{
+    directo.src = video1.src;
+    directo.currentTime = video1.currentTime;
+    directo.play();
+    directo.poster='#';
+}
+
+const video_2 = () =>{
+    directo.src = video2.src;
+    directo.currentTime = video2.currentTime;
+    directo.play();
+    directo.poster='#';
+}
+
+const video_3 = () =>{
+    directo.src = video3.src;
+    directo.currentTime = video3.currentTime;
+    directo.play();
+    directo.poster='#';
+}
