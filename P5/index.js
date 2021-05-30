@@ -28,6 +28,8 @@ const TEST_IMAGE_URL = "test.png";
 //-- ha arrancado
 directo.poster = TEST_IMAGE_URL;
 video1.poster = TEST_IMAGE_URL;
+video2.poster = TEST_IMAGE_URL;
+video3.poster = TEST_IMAGE_URL;
 
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
