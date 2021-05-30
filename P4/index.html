@@ -11,16 +11,16 @@
 <body>
     <br>
     <h1>Procesador de imagenes</h1>
-    
-    <div class="original">
-        <p>Imagen original</p>
-        <img src="img1.jpg" id="imagesrc">
+    <div class="contenedor">
+        <div class="original">
+            <p>Imagen original</p>
+            <img src="img1.jpg" id="imagesrc">
+        </div>
+        <div class="filtrada">
+            <p>Imagen filtrada</p>
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
-    <div class="filtrada">
-        <p>Imagen filtrada</p>
-        <canvas id="canvas"></canvas>
-    </div>
-     
     <div class="filtros">
         <button type="button" id="original">Original</button>
         <button type="button" id="colores">Color</button>
@@ -29,26 +29,39 @@
         <button type="button" id="ruido">Ruido</button>
 
     </div>
-
     
     <div class="deslizadores">
-        <p id="rojo">Umbral rojo:</p>
-        <input type="range" id="deslizador_Rojo" min="0" max="255" value="255" disable/>
-        <p id="range_value_Rojo">00</p>
-
-        <p>Umbral verde:</p>
-        <input type="range" id="deslizador_Verde" min="0" max="255" value="255" disable/>
-        <p id="range_value_Verde">00</p>
+        <div class="umbral">
+            <p id="rojo">Umbral rojo:</p>
+            <input type="range" id="deslizador_Rojo" min="0" max="255" value="255" disable/>
+            <p id="range_value_Rojo">00</p>
+        </div>
         
-        <p>Umbral azul:</p>
-        <input type="range" id="deslizador_Azul" min="0" max="255" value="255" disable/>
-        <p id="range_value_Azul">00</p>
+        <div class="umbral">
+            <p>Umbral verde:</p>
+            <input type="range" id="deslizador_Verde" min="0" max="255" value="255" disable/>
+            <p id="range_value_Verde">00</p>
+        </div>
+       
+        <div class="umbral">
+            <p>Umbral azul:</p>
+            <input type="range" id="deslizador_Azul" min="0" max="255" value="255" disable/>
+            <p id="range_value_Azul">00</p>
+        </div>
     </div>
 
-    <div class="otras">
-        <button type="button" id="img_1">Imagen 1</button>
-        <button type="button" id="img_2">Imagen 2</button>
-        <button type="button" id="img_3">Imagen 3</button>
+    <div class="imagenes">
+        <div class="button-container">
+            
+        </div>
+        <div class="button-container">
+            <button type="button" id="img_1">Imagen 1</button>
+            <button type="button" id="img_2">Imagen 2</button>
+            <button type="button" id="img_3">Imagen 3</button>
+        </div>
+        <div class="button-container">
+            
+        </div>
     </div>
  
 
