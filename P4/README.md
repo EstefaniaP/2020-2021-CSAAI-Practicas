@@ -20,5 +20,7 @@ PROCESADOR DE IMAGENES (MEJORAS):
     * Filtro ruido: añade ruido a la imagen
 * Solo los deslizadores están operativos con el filtro de colores, en el resto están desactivados.
 * Mejora visual de los deslizadores, en horizontal.
+* Al pasar por un boton, cambia de color y el cursor deja de ser flecha para ser una mano!
+* Se adapta correctamente a cualquier pantalla
 
 ENJOY!
