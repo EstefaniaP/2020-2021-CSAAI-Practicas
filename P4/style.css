@@ -22,30 +22,37 @@
     margin: 10px;
     border-radius: 10px;
     color: #fff9fd;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #53bfca;
   }
   
 
 .original{   
-    float: left;
     font-weight: 10;
     font-size: 15px;
     text-align: center;
     color: rgb(212, 5, 143);
-    margin-left: 200px;
+    width: 50%;
   
 }
 
 .filtrada{
-    float: right;
     font-weight: 10;
     font-size: 15px;
     text-align: center;
-    color: rgb(212, 5, 143);   
-    margin-right: 200px;
+    color: rgb(212, 5, 143);
+    width: 50%;
 }
 
 .filtros{
-    margin-top: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .deslizadores{
@@ -53,15 +60,55 @@
     font-family: letranasa;
     color: black;
     text-align: center;
-    padding-left: 80px;
-    padding-right: 80px;
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    column-count: 3;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #range_value_Rojo, #range_value_Verde, #range_value_Azul{
     margin-right: 30px;
 }
 
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .contenedor {
+    flex-direction: column;
+  }
+
+  .original {
+    width: 100%;
+  }
+
+  .filtrada {
+    width: 100%;
+  }
+}
+
+.umbral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.button-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
