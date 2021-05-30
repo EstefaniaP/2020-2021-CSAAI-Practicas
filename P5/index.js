@@ -42,12 +42,13 @@ btn_src_on.onclick = () => {
 btn_src_off.onclick = () => {
     directo.poster = TEST_IMAGE_URL;
     video1.poster = TEST_IMAGE_URL;
-    directo.src = '';
+    stopVideos();
+    
   };
 
 //-- Botón de Test
 btn_test.onclick = () => {
-    directo.src = null;
+    directo.src = '#';
     directo.poster = TEST_IMAGE_URL;
     
 };
@@ -57,5 +58,17 @@ btn_video1.onclick = () => {
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
     directo.play();
-    directo.poster=null;
+    directo.poster='#';
+};
+
+video1.onclick = () => {
+    directo.src = video1.src;
+    directo.currentTime = video1.currentTime;
+    directo.play();
+    directo.poster='#';
+};
+
+const stopVideos = () => {
+    video1.src = TEST_IMAGE_URL;
+    directo.src = TEST_IMAGE_URL;
 };
