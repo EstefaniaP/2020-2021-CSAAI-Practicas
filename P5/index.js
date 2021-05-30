@@ -61,9 +61,6 @@ btn_src_on.onclick = () => {
 //-- Boton de FUENTES-Off
 btn_src_off.onclick = () => {
     directo.poster = TEST_IMAGE_URL;
-    video1.poster = TEST_IMAGE_URL;
-    video2.poster = TEST_IMAGE_URL;
-    video3.poster = TEST_IMAGE_URL;
     stopVideos();
     
   };
@@ -109,5 +106,7 @@ btn_video3.onclick = () => {
 
 const stopVideos = () => {
     video1.src = TEST_IMAGE_URL;
+    video2.src = TEST_IMAGE_URL;
+    video3.src = TEST_IMAGE_URL;
     directo.src = TEST_IMAGE_URL;
 };
