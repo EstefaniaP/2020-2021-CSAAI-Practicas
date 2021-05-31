@@ -24,6 +24,9 @@ body {
     height: 60px;
     border-radius: 5px;
     padding-right: 10px;
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
    
   }
   
