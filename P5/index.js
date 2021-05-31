@@ -9,8 +9,8 @@ const btn_video3 = document.getElementById("btn_video3");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
-
-
+const btn_src_automatico = document.getElementById("btn_src_automatico");
+const btn_src_manual = document.getElementById("btn_src_manual");
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
 directo.height=200;
@@ -33,8 +33,9 @@ video3.poster = TEST_IMAGE_URL;
 
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
- 
-  //-- Establecer la fuente de la cámara 1, 2 y 3
+ operativo();
+  
+ //-- Establecer la fuente de la cámara 1, 2 y 3
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
   video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
   video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
@@ -86,22 +87,34 @@ btn_video3.onclick = () => {
     video_3();
 };
 
-//-- Boton de FUENTES-Off
-btn_src_off.onclick = () => {
-    directo.poster = TEST_IMAGE_URL;
-    stopVideos();
+//-- Boton de FUENTES-automatico
+btn_src_automatico.onclick = () => {
+    apagado();
+
+    btn_video1.onclick();
+    setTimeout(btn_video2.onclick, 3000);
+    setTimeout(btn_video3.onclick, 6000);
+    var repeat = setInterval(change, 9000);
+    var Video_2;
+    var Video_3;
+
+    change();
+      
   };
 
 //Para pulsar al video y que haga de boton
 video1.onclick = () => {
+    operativo();
     video_1();
 };
 
 video2.onclick = () => {
+    operativo();
     video_2();
 };
 
 video3.onclick = () => {
+    operativo();
     video_3();
 };
 
@@ -132,3 +145,30 @@ const video_3 = () =>{
     directo.play();
     directo.poster='#';
 }
+
+function operativo(){
+    btn_video1.disabled = false;
+    btn_video2.disabled = false;
+    btn_video3.disabled = false;
+    btn_test.disabled = false;
+    video1.disable = false;
+    video2.disable = false;
+    video3.disable = false;
+}
+
+function apagado(){
+    btn_video1.disabled = true;
+    btn_video2.disabled = true;
+    btn_video3.disabled = true;
+    btn_test.disabled = true;
+    video1.disable = true;
+    video2.disable = true;
+    video3.disable = true;
+}
+
+function change() {
+    btn_video1.onclick();
+    Video_2 = setTimeout(btn_video2.onclick, 3000);
+    Video_3 = setTimeout(btn_video3.onclick, 6000);
+  }
+
