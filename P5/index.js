@@ -32,6 +32,10 @@ video1.poster = TEST_IMAGE_URL;
 video2.poster = TEST_IMAGE_URL;
 video3.poster = TEST_IMAGE_URL;
 
+apagado();
+btn_src_on.disabled = true;
+btn_src_off.disabled = true;
+
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
  operativo();
@@ -61,7 +65,6 @@ btn_src_off.onclick = () => {
 btn_test.onclick = () => {
     directo.src = '#';
     directo.poster = TEST_IMAGE_URL;
-    
 };
 
 //-- Botón de Selección de la cámara 1
