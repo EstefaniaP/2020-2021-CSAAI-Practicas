@@ -40,14 +40,7 @@ btn_src_on.onclick = () => {
     establecer_videos();
 
   //-- Reproducimos un vídeo, desde el comienzo
-  video1.currentTime = 0;
-  video1.play();
-
-  video2.currentTime = 0;
-  video2.play();
-
-  video3.currentTime = 0;
-  video3.play();
+  reproduccion();
 
   //-- Y en silencio...
   video1.muted=true;
@@ -94,14 +87,7 @@ btn_src_automatico.onclick = () => {
     btn_src_off.disabled = true;
     
     establecer_videos();
-    video1.currentTime = 0;
-    video1.play();
-
-    video2.currentTime = 0;
-    video2.play();
-
-    video3.currentTime = 0;
-    video3.play();
+    reproduccion();
 
     btn_video1.onclick();
     setTimeout(btn_video2.onclick, 3000);
@@ -200,4 +186,15 @@ function establecer_videos(){
     video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
     video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
     video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
+}
+
+function reproduccion(){
+    video1.currentTime = 0;
+    video1.play();
+
+    video2.currentTime = 0;
+    video2.play();
+
+    video3.currentTime = 0;
+    video3.play();
 }
