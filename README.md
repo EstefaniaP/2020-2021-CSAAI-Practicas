@@ -8,3 +8,5 @@ Práctica 2: Astro Calc https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P
 Práctica 3: Breakout https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P3/
 
 Práctica 4: Procesador de imágenes https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P4/
+
+Práctica 5: Realizador de TV https://estefaniap.github.io/2020-2021-CSAAI-Practicas/P5/
