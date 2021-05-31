@@ -115,7 +115,15 @@ btn_src_automatico.onclick = () => {
 
   //-- Boton de FUENTES-manual
 btn_src_manual.onclick = () => {
-    btn_src_on.onclick
+    directo.src = TEST_IMAGE_URL;
+    video1.src = TEST_IMAGE_URL;
+    video2.src = TEST_IMAGE_URL;
+    video3.src = TEST_IMAGE_URL;
+
+    btn_src_on.disabled = false;
+    btn_src_off.disabled = false;
+    operativo();
+    
   };
 
 //Para pulsar al video y que haga de boton
