@@ -11,6 +11,7 @@ const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
 const btn_src_automatico = document.getElementById("btn_src_automatico");
 const btn_src_manual = document.getElementById("btn_src_manual");
+
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
 directo.height=200;
@@ -36,9 +37,7 @@ btn_src_on.onclick = () => {
  operativo();
   
  //-- Establecer la fuente de la cámara 1, 2 y 3
-  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
-  video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
-  video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
+    establecer_videos();
 
   //-- Reproducimos un vídeo, desde el comienzo
   video1.currentTime = 0;
@@ -91,6 +90,19 @@ btn_video3.onclick = () => {
 btn_src_automatico.onclick = () => {
     apagado();
 
+    btn_src_on.disabled = true;
+    btn_src_off.disabled = true;
+    
+    establecer_videos();
+    video1.currentTime = 0;
+    video1.play();
+
+    video2.currentTime = 0;
+    video2.play();
+
+    video3.currentTime = 0;
+    video3.play();
+
     btn_video1.onclick();
     setTimeout(btn_video2.onclick, 3000);
     setTimeout(btn_video3.onclick, 6000);
@@ -99,7 +111,11 @@ btn_src_automatico.onclick = () => {
     var Video_3;
 
     change();
-      
+  };
+
+  //-- Boton de FUENTES-manual
+btn_src_manual.onclick = () => {
+    btn_src_on.onclick
   };
 
 //Para pulsar al video y que haga de boton
@@ -172,3 +188,8 @@ function change() {
     Video_3 = setTimeout(btn_video3.onclick, 6000);
   }
 
+function establecer_videos(){
+    video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+    video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
+    video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
+}
